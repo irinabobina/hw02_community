@@ -11,4 +11,5 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ("pub_date",)
 
 admin.site.register(Post, PostAdmin)
+admin.site.register(Group)
 # Register your models here.
