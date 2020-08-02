@@ -4,10 +4,10 @@ from .models import Post, Group
 
 def index(request):
 # одна строка вместо тысячи слов на SQL
-    latest = Post.objects.order_by("-pub_date")[:10] #список их десяти объектов
+    latest = Post.objects.order_by("-pub_date")[:11] #список из объектов
     return render(request, "index.html", {"posts": latest})
 
-def group_posts(request, slug=None):
+def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
     posts = Post.objects.filter(group=group).order_by("-pub_date")[:12] 
     context = {
