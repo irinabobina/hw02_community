@@ -23,5 +23,5 @@ class Post(models.Model):
                               blank=True, null=True, related_name="posts")
 
 
-class Meta:
-    ordering = ("-pub_date",)
+    class Meta:
+        ordering = ("-pub_date",)
